@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2024-10-15 11:40:36
  * @LastEditors: zi.yang
- * @LastEditTime: 2024-10-15 14:20:49
+ * @LastEditTime: 2024-10-15 14:26:45
  * @Description: 
  * @FilePath: /xtools/next.config.js
  */
@@ -20,7 +20,7 @@ const nextConfig = withPlugins([withTM], {
   images: {
     unoptimized: true,
   },
-  basePath: '/',
+  basePath: '',
   redirects: process.env.NODE_ENV === 'development' ? async () => {
     return [
       {
