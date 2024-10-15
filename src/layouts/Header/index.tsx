@@ -1,7 +1,12 @@
+import React, { useEffect, useMemo } from 'react';
+
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import { ToolCard } from '@/components/ToolCard';
 import { usePath } from '@/hooks';
 import { Tags } from '@/utils/tags';
-import { Tool, allTools } from '@/utils/tools';
+import { allTools, Tool } from '@/utils/tools';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchIcon from '@mui/icons-material/Search';
 import {
@@ -12,9 +17,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React, { useEffect, useMemo } from 'react';
 
 const ifChecked = (currentPath: string, itemPath: string) => {
   return currentPath === itemPath;
@@ -76,7 +78,7 @@ const Header: React.FC<{}> = () => {
         sx={{ mr: 2, color: 'rgba(11, 37, 98, 1)' }}
       >
         <Link className='custom-link' href='/home'>
-          百川在线工具箱
+          在线工具箱
         </Link>
       </Typography>
       <Link className='custom-link' href='https://github.com/chaitin/xtools'>

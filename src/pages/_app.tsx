@@ -1,27 +1,36 @@
+/*
+ * @Author: zi.yang
+ * @Date: 2024-10-15 11:40:36
+ * @LastEditors: zi.yang
+ * @LastEditTime: 2024-10-16 06:47:54
+ * @Description:
+ * @FilePath: /xtools/src/pages/_app.tsx
+ */
 import '@/styles/global.css';
 import '@/styles/static/slick.css';
 import '@/styles/static/effect-creative.min.css';
 import '@/styles/static/navigation.min.css';
 import '@/styles/static/swiper-customize.css';
 import '@/styles/static/swiper.css';
+import '@chaitin_rivers/excalidraw/index.css';
+
+import { useMemo } from 'react';
+
+import Head from 'next/head';
+import PropTypes from 'prop-types';
+
+import { usePath } from '@/hooks';
+import { AnchorContextProvider } from '@/hooks/useAnchor';
+import { LikeContextProvider } from '@/hooks/useLikeList';
+import Header from '@/layouts/Header';
+import SideBar from '@/layouts/SideBar';
 import theme from '@/styles/theme';
 import createEmotionCache from '@/utils/emotionCache';
+import { allTools } from '@/utils/tools';
 import { CacheProvider } from '@emotion/react';
 import { Stack, ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-import PropTypes from 'prop-types';
-import Header from '@/layouts/Header';
-import SideBar from '@/layouts/SideBar';
-import { LikeContextProvider } from '@/hooks/useLikeList';
-import { AnchorContextProvider } from '@/hooks/useAnchor';
-import { usePath } from '@/hooks';
-import { useMemo } from 'react';
-import { allTools } from '@/utils/tools';
-import Head from 'next/head';
-import RiverHeader from '../components/Header';
-import '@chaitin_rivers/excalidraw/index.css';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -64,7 +73,7 @@ export default function App({
           <AnchorContextProvider>
             <LikeContextProvider>
               <QueryClientProvider client={queryClient}>
-                {isProduction ? <RiverHeader /> : null}
+                {/* {isProduction ? <RiverHeader /> : null} */}
                 <Stack
                   sx={{
                     width: '1180px',

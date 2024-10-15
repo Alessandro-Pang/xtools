@@ -21,7 +21,7 @@ const nextConfig = withPlugins([withTM], {
     unoptimized: true,
   },
   basePath: '',
-  redirects: process.env.NODE_ENV === 'development' ? async () => {
+  redirects: async () => {
     return [
       {
         source: '/',
@@ -29,7 +29,7 @@ const nextConfig = withPlugins([withTM], {
         permanent: true,
       },
     ];
-  } : undefined,
+  },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     config.experiments = {
