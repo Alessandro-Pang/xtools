@@ -1,11 +1,12 @@
 import { createTheme } from '@mui/material/styles';
+
 import {
-  primary,
-  primaryHover,
+  errorText,
   gray,
   grayText2,
-  errorText,
   leastText,
+  primary,
+  primaryHover,
 } from './colors';
 
 const Din = 'https://heap-web.oss-cn-hangzhou.aliyuncs.com/fonts/Din.woff2';
@@ -104,7 +105,7 @@ const theme = createTheme({
         color:"#ccc
       }
       body{
-        padding-top: ${process.env.NODE_ENV === 'production' ? '64px' : '0'}
+        padding-top: 0
       }
       #fullscreen-element{
         overflow: auto;
